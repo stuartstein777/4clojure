@@ -15,6 +15,16 @@
      res
      (combine' (rest keys) (rest vals) (assoc res (first keys) (first vals))))))
 
+;; Problem 62: Re-implement iterate
+;; Difficulty: Easy
+;; Topics: seqs core-functions
+;; Given a side-effect free function f and an initial value x write a function which returns an
+;; infinite lazy sequence of x, (f x), (f (f x)), (f (f (f x))), et
+; (= (take 5 (__ #(* 2 %) 1)) [1 2 4 8 16])
+; (= (take 100 (__ inc 0)) (take 100 (range)))
+; (= (take 9 (__ #(inc (mod % 3)) 1)) (take 9 (cycle [1 2 3])))
+(fn iterate' [f x] (cons x (lazy-seq (iterate' f (f x)))))
+
 ;; Problem 64: Intro to Reduce
 ;; Difficulty: Elementary
 ;; Topics: seqs
