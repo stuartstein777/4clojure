@@ -33,6 +33,9 @@
   (let [all (conj r a)]
     (true? (and (some true? all) (some false? all)))))
 
+;; alternate solution
+(fn [& args] (= 2 (count (set args))))
+
 ;; Problem 88: Symmetric Difference
 ;; Difficulty: Easy
 ;; Topics: Set theory
