@@ -57,7 +57,7 @@
 ;; Topics: seqs
 ;; The iterate function can be used to produce an infinite lazy sequence.
 ; (= __ (take 5 (iterate #(+ 3 %) 1)))
-(= '(4 5 6 7 8) (take 5 (iterate #(+ 3 %) 1)))
+(= '(1 4 7 10 13) (take 5 (iterate #(+ 3 %) 1)))
 
 ;; Problem 47: Contain yourself
 ;; Difficulty: Easy
