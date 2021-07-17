@@ -38,6 +38,20 @@
 (fn [xs n] (->> (partition n xs)
                 (apply map vector)))
 
+;; Problem 44: Rotate sequence
+;; Difficulty: Easy
+;; Write a function which can rotate a sequence in either direction.
+; (= (__ 2 [1 2 3 4 5]) '(3 4 5 1 2))
+; (= (__ -2 [1 2 3 4 5]) '(4 5 1 2 3))
+; (= (__ 6 [1 2 3 4 5]) '(2 3 4 5 1))
+; (= (__ 1 '(:a :b :c)) '(:b :c :a))
+; (= (__ -4 '(:a :b :c)) '(:c :a :b))
+(fn [n xs]
+  (let [cnt (count xs)]
+    (if (neg? n)
+      (concat (drop (- cnt (mod (- n) cnt)) xs) (take (- cnt (mod (- n) cnt)) xs))
+      (concat (drop (mod n cnt) xs) (take (mod n cnt) xs)))))
+
 ;; Problem 45: Intro to iterate
 ;; Difficulty: Easy
 ;; Topics: seqs
