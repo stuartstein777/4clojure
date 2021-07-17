@@ -32,6 +32,12 @@
      tot
      (recur (dec n) (* tot n)))))
 
+;; Problem 43: Reverse Interleave
+;; Difficulty: Easy
+;; Write a function which reverses the interleave process into x number of subsequences.
+(fn [xs n] (->> (partition n xs)
+                (apply map vector)))
+
 ;; Problem 45: Intro to iterate
 ;; Difficulty: Easy
 ;; Topics: seqs
