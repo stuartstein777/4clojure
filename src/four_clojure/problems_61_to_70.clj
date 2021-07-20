@@ -15,6 +15,10 @@
      res
      (combine' (rest keys) (rest vals) (assoc res (first keys) (first vals))))))
 
+; alternate solution
+#(->> (map (fn [k v] {k v}) %1 %2)
+          (apply merge))
+
 ;; Problem 62: Re-implement iterate
 ;; Difficulty: Easy
 ;; Topics: seqs core-functions
